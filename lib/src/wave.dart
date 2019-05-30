@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'dart:math' as math;
-import 'package:vector_math/vector_math.dart' as vector;
+
+import 'package:flutter/material.dart';
 
 class Wave extends StatefulWidget {
   final double value;
@@ -72,8 +72,7 @@ class _WaveClipper extends CustomClipper<Path> {
     final waveList = <Offset>[];
     for (int i = -2; i <= size.width.toInt() + 2; i++) {
       final dy =
-          math.sin((animationValue * 360 - i) % 360 * vector.degrees2Radians) *
-                  10 +
+          math.sin((animationValue * 360 - i) % 360 * (math.pi / 180)) * 10 +
               (size.height - (size.height * value));
       waveList.add(Offset(i.toDouble(), dy));
     }
