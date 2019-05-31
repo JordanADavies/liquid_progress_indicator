@@ -8,21 +8,34 @@ const double _epsilon = .001;
 const double _sweep = _twoPi - _epsilon;
 
 class LiquidCircularProgressIndicator extends ProgressIndicator {
-  //The widget to show inside the progress indicator.
+  ///The width of the border, if this is set [borderColor] must also be set.
+  final double borderWidth;
+
+  ///The color of the border, if this is set [borderWidth] must also be set.
+  final Color borderColor;
+
+  ///The widget to show in the center of the progress indicator.
   final Widget center;
 
-  const LiquidCircularProgressIndicator({
+  LiquidCircularProgressIndicator({
     Key key,
     double value,
     Color backgroundColor,
     Animation<Color> valueColor,
+    this.borderWidth,
+    this.borderColor,
     this.center,
   }) : super(
           key: key,
           value: value,
           backgroundColor: backgroundColor,
           valueColor: valueColor,
-        );
+        ) {
+    if (borderWidth != null && borderColor == null ||
+        borderColor != null && borderWidth == null) {
+      throw ArgumentError("borderWidth and borderColor should both be set.");
+    }
+  }
 
   Color _getBackgroundColor(BuildContext context) =>
       backgroundColor ?? Theme.of(context).backgroundColor;
@@ -44,6 +57,10 @@ class _LiquidCircularProgressIndicatorState
       child: CustomPaint(
         painter: _CirclePainter(
           color: widget._getBackgroundColor(context),
+        ),
+        foregroundPainter: _CircleBorderPainter(
+          color: widget.borderColor,
+          width: widget.borderWidth,
         ),
         child: Stack(
           children: [
@@ -68,6 +85,31 @@ class _CirclePainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final paint = Paint()..color = color;
     canvas.drawArc(Offset.zero & size, 0, _sweep, false, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => true;
+}
+
+class _CircleBorderPainter extends CustomPainter {
+  final Color color;
+  final double width;
+
+  _CircleBorderPainter({this.color, this.width});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    if (color == null || width == null) {
+      return;
+    }
+
+    final borderPaint = Paint()
+      ..color = color
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = width;
+    final newSize = Size(size.width - width, size.height - width);
+    canvas.drawArc(
+        Offset(width / 2, width / 2) & newSize, 0, _sweep, false, borderPaint);
   }
 
   @override
