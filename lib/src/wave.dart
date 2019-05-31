@@ -6,7 +6,11 @@ class Wave extends StatefulWidget {
   final double value;
   final Color color;
 
-  const Wave({Key key, this.value, @required this.color}) : super(key: key);
+  const Wave({
+    Key key,
+    @required this.value,
+    @required this.color,
+  }) : super(key: key);
 
   @override
   _WaveState createState() => _WaveState();
@@ -45,7 +49,7 @@ class _WaveState extends State<Wave> with SingleTickerProviderStateMixin {
             ),
             clipper: _WaveClipper(
               animationValue: _animationController.value,
-              value: widget.value ?? 0.5,
+              value: widget.value,
             ),
           ),
     );

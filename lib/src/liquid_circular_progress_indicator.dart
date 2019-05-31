@@ -19,7 +19,7 @@ class LiquidCircularProgressIndicator extends ProgressIndicator {
 
   LiquidCircularProgressIndicator({
     Key key,
-    double value,
+    double value = 0.5,
     Color backgroundColor,
     Animation<Color> valueColor,
     this.borderWidth,
@@ -88,7 +88,7 @@ class _CirclePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) => true;
+  bool shouldRepaint(_CirclePainter oldDelegate) => color != oldDelegate.color;
 }
 
 class _CircleBorderPainter extends CustomPainter {
@@ -113,7 +113,8 @@ class _CircleBorderPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) => true;
+  bool shouldRepaint(_CircleBorderPainter oldDelegate) =>
+      color != oldDelegate.color || width != oldDelegate.width;
 }
 
 class _CircleClipper extends CustomClipper<Path> {
