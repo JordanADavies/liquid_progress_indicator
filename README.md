@@ -3,6 +3,7 @@
 Liquid progress indicator for Flutter. 
 
 ![LiquidCircularProgressIndicator](https://raw.githubusercontent.com/JordanADavies/liquid_progress_indicator/master/art/liquid_progress_indicator.gif)
+![LiquidLinearProgressIndicator](https://raw.githubusercontent.com/JordanADavies/liquid_progress_indicator/master/art/liquid_progress_indicator_1.gif)
   
 # Features  
   
