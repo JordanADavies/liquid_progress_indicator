@@ -31,6 +31,7 @@ class LiquidCircularProgressIndicatorPage extends StatelessWidget {
                   valueColor: AlwaysStoppedAnimation(Colors.pink),
                   borderColor: Colors.red,
                   borderWidth: 5.0,
+                  direction: Axis.horizontal,
                 ),
               ),
               SizedBox(
@@ -42,6 +43,15 @@ class LiquidCircularProgressIndicatorPage extends StatelessWidget {
                   borderColor: Colors.blue,
                   borderWidth: 5.0,
                   center: Icon(Icons.cancel),
+                ),
+              ),
+              SizedBox(
+                width: 75,
+                height: 75,
+                child: LiquidCircularProgressIndicator(
+                  backgroundColor: Colors.lightGreen,
+                  valueColor: AlwaysStoppedAnimation(Colors.blueGrey),
+                  direction: Axis.horizontal,
                 ),
               ),
             ],

@@ -1,6 +1,7 @@
 ## [0.1.1]
 
 * Refactoring.
+* Added direction property to LiquidCircularProgressIndicator.
 
 ## [0.1.0]
 
