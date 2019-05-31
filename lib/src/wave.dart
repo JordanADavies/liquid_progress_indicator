@@ -74,7 +74,7 @@ class _WaveClipper extends CustomClipper<Path> {
   Path getClip(Size size) {
     if (direction == Axis.horizontal) {
       Path path = Path()
-        ..addPolygon(_generateVerticalWavePath(size), false)
+        ..addPolygon(_generateHorizontalWavePath(size), false)
         ..lineTo(0.0, size.height)
         ..lineTo(0.0, 0.0)
         ..close();
@@ -82,7 +82,7 @@ class _WaveClipper extends CustomClipper<Path> {
     }
 
     Path path = Path()
-      ..addPolygon(_generateHorizontalWavePath(size), false)
+      ..addPolygon(_generateVerticalWavePath(size), false)
       ..lineTo(size.width, size.height)
       ..lineTo(0.0, size.height)
       ..close();
@@ -91,24 +91,24 @@ class _WaveClipper extends CustomClipper<Path> {
 
   List<Offset> _generateHorizontalWavePath(Size size) {
     final waveList = <Offset>[];
-    for (int i = -2; i <= size.width.toInt() + 2; i++) {
-      final waveHeight = (size.height / 20);
-      final dy = math.sin((animationValue * 360 - i) % 360 * (math.pi / 180)) *
-              waveHeight +
-          (size.height - (size.height * value));
-      waveList.add(Offset(i.toDouble(), dy));
+    for (int i = -2; i <= size.height.toInt() + 2; i++) {
+      final waveHeight = (size.width / 20);
+      final dx = math.sin((animationValue * 360 - i) % 360 * (math.pi / 180)) *
+          waveHeight +
+          (size.width * value);
+      waveList.add(Offset(dx, i.toDouble()));
     }
     return waveList;
   }
 
   List<Offset> _generateVerticalWavePath(Size size) {
     final waveList = <Offset>[];
-    for (int i = -2; i <= size.height.toInt() + 2; i++) {
-      final waveHeight = (size.width / 20);
-      final dx = math.sin((animationValue * 360 - i) % 360 * (math.pi / 180)) *
-              waveHeight +
-          (size.width - (size.width * value));
-      waveList.add(Offset(dx, i.toDouble()));
+    for (int i = -2; i <= size.width.toInt() + 2; i++) {
+      final waveHeight = (size.height / 20);
+      final dy = math.sin((animationValue * 360 - i) % 360 * (math.pi / 180)) *
+          waveHeight +
+          (size.height - (size.height * value));
+      waveList.add(Offset(i.toDouble(), dy));
     }
     return waveList;
   }
