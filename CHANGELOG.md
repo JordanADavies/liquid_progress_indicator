@@ -1,3 +1,7 @@
+## [0.2.0]
+
+* Added LiquidLinearProgressIndicator.
+
 ## [0.1.1]
 
 * Refactoring.

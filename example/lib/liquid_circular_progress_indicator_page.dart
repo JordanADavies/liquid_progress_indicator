@@ -42,7 +42,13 @@ class LiquidCircularProgressIndicatorPage extends StatelessWidget {
                   valueColor: AlwaysStoppedAnimation(Colors.grey),
                   borderColor: Colors.blue,
                   borderWidth: 5.0,
-                  center: Icon(Icons.cancel),
+                  center: Text(
+                    "Loading...",
+                    style: TextStyle(
+                      fontSize: 12.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
               SizedBox(
@@ -83,6 +89,12 @@ class _AnimatedLiquidCircularProgressIndicatorState
 
     _animationController.addListener(() => setState(() {}));
     _animationController.repeat();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
   }
 
   @override
