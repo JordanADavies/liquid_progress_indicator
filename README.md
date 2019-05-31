@@ -19,6 +19,6 @@ Liquid progress indicator for Flutter.
 Add the following to your `pubspec.yaml`
 
     dependencies:  
-      liquid_progress_indicator: ^0.2.0
+      liquid_progress_indicator: ^0.2.1
 
 Run `flutter packages upgrade` or update your packages

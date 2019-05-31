@@ -1,3 +1,7 @@
+## [0.2.1]
+
+* Ran formatter.
+
 ## [0.2.0]
 
 * Added LiquidLinearProgressIndicator.
