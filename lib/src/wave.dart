@@ -94,7 +94,7 @@ class _WaveClipper extends CustomClipper<Path> {
     for (int i = -2; i <= size.height.toInt() + 2; i++) {
       final waveHeight = (size.width / 20);
       final dx = math.sin((animationValue * 360 - i) % 360 * (math.pi / 180)) *
-          waveHeight +
+              waveHeight +
           (size.width * value);
       waveList.add(Offset(dx, i.toDouble()));
     }
@@ -106,7 +106,7 @@ class _WaveClipper extends CustomClipper<Path> {
     for (int i = -2; i <= size.width.toInt() + 2; i++) {
       final waveHeight = (size.height / 20);
       final dy = math.sin((animationValue * 360 - i) % 360 * (math.pi / 180)) *
-          waveHeight +
+              waveHeight +
           (size.height - (size.height * value));
       waveList.add(Offset(i.toDouble(), dy));
     }
