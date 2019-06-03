@@ -7,18 +7,40 @@ Liquid progress indicator for Flutter.
 <img src="https://raw.githubusercontent.com/JordanADavies/liquid_progress_indicator/master/art/liquid_linear_progress_indicator.gif" width=250>
 </p>
   
-# Features  
+## Features  
   
  - Liquid circular progress indicator.
  - Liquid linear progress indicator.
  - Works similarly to Flutters own ProgressIndicator.
  - Customise colors, borders, direction, etc.
   
-## Getting Started  
-  
-Add the following to your `pubspec.yaml`
+## Usage
 
-    dependencies:  
-      liquid_progress_indicator: ^0.2.2
+    import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
 
-Run `flutter packages upgrade` or update your packages
+### LiquidCircularProgressIndicator
+
+    LiquidCircularProgressIndicator(
+      value: 0.25, // Defaults to 0.5.
+      valueColor: AlwaysStoppedAnimation(Colors.pink), // Defaults to the current Theme's accentColor.
+      backgroundColor: Colors.white, // Defaults to the current Theme's backgroundColor.
+      borderColor: Colors.red,
+      borderWidth: 5.0,
+      direction: Axis.horizontal, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right). Defaults to Axis.vertical.
+      center: Text("Loading..."),
+    );
+    
+### LiquidLinearProgressIndicator
+
+    LiquidLinearProgressIndicator(
+      value: 0.25, // Defaults to 0.5.
+      valueColor: AlwaysStoppedAnimation(Colors.pink), // Defaults to the current Theme's accentColor.
+      backgroundColor: Colors.white, //Defaults to the current Theme's backgroundColor.
+      borderColor: Colors.red,
+      borderWidth: 5.0,
+      borderRadius: 12.0,
+      direction: Axis.vertical, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right). Defaults to Axis.horizontal.
+      center: Text("Loading..."),
+    );
+
+
