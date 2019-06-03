@@ -1,3 +1,7 @@
+## [0.2.2]
+
+* Updated artwork.
+
 ## [0.2.1]
 
 * Ran formatter.
