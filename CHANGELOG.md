@@ -1,3 +1,7 @@
+## [0.2.3]
+
+* Updated documentation.
+
 ## [0.2.2]
 
 * Updated artwork.
