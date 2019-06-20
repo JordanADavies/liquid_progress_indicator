@@ -11,8 +11,6 @@ class LiquidCustomProgressIndicatorPage extends StatelessWidget {
       body: Center(
         child: LiquidCustomProgressIndicator(
           direction: Axis.vertical,
-          borderColor: Colors.red,
-          borderWidth: 5.0,
           shapePath: _buildPath(),
         ),
       ),
@@ -21,10 +19,9 @@ class LiquidCustomProgressIndicatorPage extends StatelessWidget {
 
   Path _buildPath() {
     return Path()
-      ..moveTo(50, 0)
-      ..lineTo(0, 75)
-      ..arcToPoint(
-        Offset(100, 75), clockwise: false, radius: Radius.circular(8.0),)
+      ..lineTo(75, 0)
+      ..lineTo(60, 100)
+      ..lineTo(15, 100)
       ..close();
   }
 }
