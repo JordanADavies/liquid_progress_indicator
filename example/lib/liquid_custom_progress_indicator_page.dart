@@ -109,13 +109,13 @@ class _AnimatedLiquidCustomProgressIndicatorState
 
   Path _buildHeartPath() {
     return Path()
-      ..moveTo(75, 40)
-      ..cubicTo(75, 37, 70, 25, 50, 25)
-      ..cubicTo(20, 25, 20, 62.5, 20, 62.5)
-      ..cubicTo(20, 80, 40, 102, 75, 120)
-      ..cubicTo(110, 102, 130, 80, 130, 62.5)
-      ..cubicTo(130, 62.5, 130, 25, 100, 25)
-      ..cubicTo(85, 25, 75, 37, 75, 40)
+      ..moveTo(55, 15)
+      ..cubicTo(55, 12, 50, 0, 30, 0)
+      ..cubicTo(0, 0, 0, 37.5, 0, 37.5)
+      ..cubicTo(0, 55, 20, 77, 55, 95)
+      ..cubicTo(90, 77, 110, 55, 110, 37.5)
+      ..cubicTo(110, 37.5, 110, 0, 80, 0)
+      ..cubicTo(65, 0, 55, 12, 55, 15)
       ..close();
   }
 }
