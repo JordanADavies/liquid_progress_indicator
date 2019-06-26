@@ -8,7 +8,7 @@ class LiquidCustomProgressIndicator extends ProgressIndicator {
   ///The direction the liquid travels.
   final Axis direction;
 
-  ///The path used to draw the shape of the progress indicator.
+  ///The path used to draw the shape of the progress indicator. The size of the progress indicator is controlled by the bounds of this path.
   final Path shapePath;
 
   LiquidCustomProgressIndicator({
