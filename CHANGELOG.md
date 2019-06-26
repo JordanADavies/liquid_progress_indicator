@@ -1,3 +1,7 @@
+## [0.3.0]
+
+* Added LiquidCustomProgressIndicator.
+
 ## [0.2.4]
 
 * Updated dependencies.
