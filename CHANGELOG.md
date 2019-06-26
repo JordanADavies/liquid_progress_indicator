@@ -1,3 +1,8 @@
+## [0.3.1]
+
+* Updated examples.
+* Updated artwork.
+
 ## [0.3.0]
 
 * Added LiquidCustomProgressIndicator.

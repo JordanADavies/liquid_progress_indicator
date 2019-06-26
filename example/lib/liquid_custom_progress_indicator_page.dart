@@ -21,10 +21,10 @@ class LiquidCustomProgressIndicatorPage extends StatelessWidget {
                 shapePath: _buildBoatPath(),
               ),
               LiquidCustomProgressIndicator(
-                direction: Axis.vertical,
+                direction: Axis.horizontal,
                 backgroundColor: Colors.grey[300],
                 valueColor: AlwaysStoppedAnimation(Colors.red),
-                shapePath: _buildCupPath(),
+                shapePath: _buildSpeechBubblePath(),
               ),
             ],
           )
@@ -47,11 +47,15 @@ class LiquidCustomProgressIndicatorPage extends StatelessWidget {
       ..close();
   }
 
-  Path _buildCupPath() {
+  Path _buildSpeechBubblePath() {
     return Path()
-      ..lineTo(120, 0)
-      ..lineTo(95, 120)
-      ..lineTo(35, 120)
+      ..moveTo(50, 0)
+      ..quadraticBezierTo(0, 0, 0, 37.5)
+      ..quadraticBezierTo(0, 75, 25, 75)
+      ..quadraticBezierTo(25, 95, 5, 95)
+      ..quadraticBezierTo(35, 95, 40, 75)
+      ..quadraticBezierTo(100, 75, 100, 37.5)
+      ..quadraticBezierTo(100, 0, 50, 0)
       ..close();
   }
 }

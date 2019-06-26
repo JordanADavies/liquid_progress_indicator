@@ -48,7 +48,7 @@ Liquid progress indicator for Flutter.
 ### LiquidCustomProgressIndicator
     
     LiquidCustomProgressIndicator(
-      value: 0.2 // Defailts to 0.5.
+      value: 0.2 // Defaults to 0.5.
       valueColor: AlwaysStoppedAnimation(Colors.pink), // Defaults to the current Theme's accentColor.
       backgroundColor: Colors.white, // Defaults to the current Theme's backgroundColor.
       direction: Axis.vertical, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right).
