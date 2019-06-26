@@ -5,6 +5,7 @@ Liquid progress indicator for Flutter.
 <p align="center">
 <img src="https://raw.githubusercontent.com/JordanADavies/liquid_progress_indicator/master/art/liquid_circular_progress_indicator.gif" width=250>
 <img src="https://raw.githubusercontent.com/JordanADavies/liquid_progress_indicator/master/art/liquid_linear_progress_indicator.gif" width=250>
+<img src="https://raw.githubusercontent.com/JordanADavies/liquid_progress_indicator/master/art/liquid_custom_progress_indicator.gif" width=250>
 </p>
   
 ## Features  
