@@ -40,9 +40,10 @@ class _LiquidCustomProgressIndicatorState
     extends State<LiquidCustomProgressIndicator> {
   @override
   Widget build(BuildContext context) {
+    final pathBounds = widget.shapePath.getBounds();
     return SizedBox(
-      width: widget.shapePath.getBounds().width,
-      height: widget.shapePath.getBounds().height,
+      width: pathBounds.width + pathBounds.left,
+      height: pathBounds.height + pathBounds.top,
       child: ClipPath(
         clipper: _CustomPathClipper(
           path: widget.shapePath,
@@ -54,10 +55,14 @@ class _LiquidCustomProgressIndicatorState
           ),
           child: Stack(
             children: <Widget>[
-              Wave(
-                value: widget.value,
-                color: widget._getValueColor(context),
-                direction: widget.direction,
+              Positioned.fill(
+                left: pathBounds.left,
+                top: pathBounds.top,
+                child: Wave(
+                  value: widget.value,
+                  color: widget._getValueColor(context),
+                  direction: widget.direction,
+                ),
               ),
               if (widget.center != null) Center(child: widget.center),
             ],
