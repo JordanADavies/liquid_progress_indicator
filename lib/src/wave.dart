@@ -46,15 +46,15 @@ class _WaveState extends State<Wave> with SingleTickerProviderStateMixin {
         curve: Curves.easeInOut,
       ),
       builder: (context, child) => ClipPath(
-            child: Container(
-              color: widget.color,
-            ),
-            clipper: _WaveClipper(
-              animationValue: _animationController.value,
-              value: widget.value,
-              direction: widget.direction,
-            ),
-          ),
+        child: Container(
+          color: widget.color,
+        ),
+        clipper: _WaveClipper(
+          animationValue: _animationController.value,
+          value: widget.value,
+          direction: widget.direction,
+        ),
+      ),
     );
   }
 }

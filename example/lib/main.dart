@@ -23,19 +23,19 @@ class Example extends StatelessWidget {
               child: Text("Circular"),
               color: Colors.grey[300],
               onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (_) => LiquidCircularProgressIndicatorPage(),
-                    ),
-                  ),
+                MaterialPageRoute(
+                  builder: (_) => LiquidCircularProgressIndicatorPage(),
+                ),
+              ),
             ),
             FlatButton(
               child: Text("Linear"),
               color: Colors.grey[300],
               onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (_) => LiquidLinearProgressIndicatorPage(),
-                    ),
-                  ),
+                MaterialPageRoute(
+                  builder: (_) => LiquidLinearProgressIndicatorPage(),
+                ),
+              ),
             ),
             FlatButton(
               child: Text("Custom"),
