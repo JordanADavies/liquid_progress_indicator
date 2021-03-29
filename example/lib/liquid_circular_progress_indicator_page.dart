@@ -77,7 +77,7 @@ class _AnimatedLiquidCircularProgressIndicator extends StatefulWidget {
 class _AnimatedLiquidCircularProgressIndicatorState
     extends State<_AnimatedLiquidCircularProgressIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
+  late AnimationController _animationController;
 
   @override
   void initState() {

@@ -1,3 +1,7 @@
+## [0.4.0-nullsafety]
+
+* Migrating to null-safety
+
 ## [0.3.2]
 
 * Fixed issue with CustomProgressIndicator not displaying correctly when using the context to determine size.

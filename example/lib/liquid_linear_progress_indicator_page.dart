@@ -76,7 +76,7 @@ class _AnimatedLiquidLinearProgressIndicator extends StatefulWidget {
 class _AnimatedLiquidLinearProgressIndicatorState
     extends State<_AnimatedLiquidLinearProgressIndicator>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
+  late AnimationController _animationController;
 
   @override
   void initState() {
