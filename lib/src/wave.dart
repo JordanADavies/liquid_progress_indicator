@@ -3,15 +3,15 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 
 class Wave extends StatefulWidget {
-  final double value;
+  final double? value;
   final Color color;
   final Axis direction;
 
   const Wave({
-    Key key,
-    @required this.value,
-    @required this.color,
-    @required this.direction,
+    Key? key,
+    required this.value,
+    required this.color,
+    required this.direction,
   }) : super(key: key);
 
   @override
@@ -19,7 +19,7 @@ class Wave extends StatefulWidget {
 }
 
 class _WaveState extends State<Wave> with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
+  late AnimationController _animationController;
 
   @override
   void initState() {
@@ -61,13 +61,13 @@ class _WaveState extends State<Wave> with SingleTickerProviderStateMixin {
 
 class _WaveClipper extends CustomClipper<Path> {
   final double animationValue;
-  final double value;
+  final double? value;
   final Axis direction;
 
   _WaveClipper({
-    @required this.animationValue,
-    @required this.value,
-    @required this.direction,
+    required this.animationValue,
+    required this.value,
+    required this.direction,
   });
 
   @override
@@ -95,7 +95,7 @@ class _WaveClipper extends CustomClipper<Path> {
       final waveHeight = (size.width / 20);
       final dx = math.sin((animationValue * 360 - i) % 360 * (math.pi / 180)) *
               waveHeight +
-          (size.width * value);
+          (size.width * value!);
       waveList.add(Offset(dx, i.toDouble()));
     }
     return waveList;
@@ -107,7 +107,7 @@ class _WaveClipper extends CustomClipper<Path> {
       final waveHeight = (size.height / 20);
       final dy = math.sin((animationValue * 360 - i) % 360 * (math.pi / 180)) *
               waveHeight +
-          (size.height - (size.height * value));
+          (size.height - (size.height * value!));
       waveList.add(Offset(i.toDouble(), dy));
     }
     return waveList;

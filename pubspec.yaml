@@ -5,7 +5,7 @@ author: "Jordan Davies <jordandavies1990@live.co.uk>"
 homepage: "https://github.com/JordanADavies/liquid_progress_indicator"
 
 environment:
-  sdk: ">=2.2.2 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
