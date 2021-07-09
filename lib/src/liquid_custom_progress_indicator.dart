@@ -3,7 +3,7 @@ import 'package:liquid_progress_indicator/src/wave.dart';
 
 class LiquidCustomProgressIndicator extends ProgressIndicator {
   ///The widget to show in the center of the progress indicator.
-  final Widget center;
+  final Widget? center;
 
   ///The direction the liquid travels.
   final Axis direction;
@@ -12,13 +12,13 @@ class LiquidCustomProgressIndicator extends ProgressIndicator {
   final Path shapePath;
 
   LiquidCustomProgressIndicator({
-    Key key,
+    Key? key,
     double value = 0.5,
-    Color backgroundColor,
-    Animation<Color> valueColor,
+    Color? backgroundColor,
+    Animation<Color>? valueColor,
     this.center,
-    @required this.direction,
-    @required this.shapePath,
+    required this.direction,
+    required this.shapePath,
   }) : super(
           key: key,
           value: value,
@@ -77,7 +77,7 @@ class _CustomPathPainter extends CustomPainter {
   final Color color;
   final Path path;
 
-  _CustomPathPainter({@required this.color, @required this.path});
+  _CustomPathPainter({required this.color, required this.path});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -93,7 +93,7 @@ class _CustomPathPainter extends CustomPainter {
 class _CustomPathClipper extends CustomClipper<Path> {
   final Path path;
 
-  _CustomPathClipper({@required this.path});
+  _CustomPathClipper({required this.path});
 
   @override
   Path getClip(Size size) {

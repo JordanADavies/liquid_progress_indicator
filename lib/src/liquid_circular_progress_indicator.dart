@@ -9,22 +9,22 @@ const double _sweep = _twoPi - _epsilon;
 
 class LiquidCircularProgressIndicator extends ProgressIndicator {
   ///The width of the border, if this is set [borderColor] must also be set.
-  final double borderWidth;
+  final double? borderWidth;
 
   ///The color of the border, if this is set [borderWidth] must also be set.
-  final Color borderColor;
+  final Color? borderColor;
 
   ///The widget to show in the center of the progress indicator.
-  final Widget center;
+  final Widget? center;
 
   ///The direction the liquid travels.
   final Axis direction;
 
   LiquidCircularProgressIndicator({
-    Key key,
+    Key? key,
     double value = 0.5,
-    Color backgroundColor,
-    Animation<Color> valueColor,
+    Color? backgroundColor,
+    Animation<Color>? valueColor,
     this.borderWidth,
     this.borderColor,
     this.center,
@@ -84,7 +84,7 @@ class _LiquidCircularProgressIndicatorState
 class _CirclePainter extends CustomPainter {
   final Color color;
 
-  _CirclePainter({@required this.color});
+  _CirclePainter({required this.color});
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -97,8 +97,8 @@ class _CirclePainter extends CustomPainter {
 }
 
 class _CircleBorderPainter extends CustomPainter {
-  final Color color;
-  final double width;
+  final Color? color;
+  final double? width;
 
   _CircleBorderPainter({this.color, this.width});
 
@@ -109,12 +109,12 @@ class _CircleBorderPainter extends CustomPainter {
     }
 
     final borderPaint = Paint()
-      ..color = color
+      ..color = color!
       ..style = PaintingStyle.stroke
-      ..strokeWidth = width;
-    final newSize = Size(size.width - width, size.height - width);
+      ..strokeWidth = width!;
+    final newSize = Size(size.width - width!, size.height - width!);
     canvas.drawArc(
-        Offset(width / 2, width / 2) & newSize, 0, _sweep, false, borderPaint);
+        Offset(width! / 2, width! / 2) & newSize, 0, _sweep, false, borderPaint);
   }
 
   @override
