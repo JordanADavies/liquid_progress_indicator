@@ -17,6 +17,12 @@ class LiquidLinearProgressIndicator extends ProgressIndicator {
   ///The direction the liquid travels.
   final Axis direction;
 
+  ///The number of waves that will be shown in one time frame
+  final double waveCount;
+
+  ///The amplitude of the waves
+  final double amplitude;
+
   LiquidLinearProgressIndicator({
     Key? key,
     double value = 0.5,
@@ -27,6 +33,8 @@ class LiquidLinearProgressIndicator extends ProgressIndicator {
     this.borderRadius,
     this.center,
     this.direction = Axis.horizontal,
+    this.waveCount = 1,
+    this.amplitude = 2,
   }) : super(
           key: key,
           value: value,
@@ -73,6 +81,8 @@ class _LiquidLinearProgressIndicatorState
               value: widget.value,
               color: widget._getValueColor(context),
               direction: widget.direction,
+              waveCount: widget.waveCount,
+              amplitude: widget.amplitude,
             ),
             if (widget.center != null) Center(child: widget.center),
           ],

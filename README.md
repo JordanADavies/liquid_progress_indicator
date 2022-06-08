@@ -30,6 +30,8 @@ Liquid progress indicator for Flutter.
       borderWidth: 5.0,
       direction: Axis.horizontal, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right). Defaults to Axis.vertical.
       center: Text("Loading..."),
+      waveCount: 2.0, //Defaults to 1.0
+      amplitude: 4.0, //Defaults to 2.0
     );
     
 ### LiquidLinearProgressIndicator
@@ -43,6 +45,8 @@ Liquid progress indicator for Flutter.
       borderRadius: 12.0,
       direction: Axis.vertical, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right). Defaults to Axis.horizontal.
       center: Text("Loading..."),
+      waveCount: 2.0, //Defaults to 1.0
+      amplitude: 4.0, //Defaults to 2.0
     );
     
 ### LiquidCustomProgressIndicator
@@ -53,6 +57,8 @@ Liquid progress indicator for Flutter.
       backgroundColor: Colors.white, // Defaults to the current Theme's backgroundColor.
       direction: Axis.vertical, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right).
       shapePath: _buildBoatPath(), // A Path object used to draw the shape of the progress indicator. The size of the progress indicator is created from the bounds of this path.
+      waveCount: 2.0, //Defaults to 1.0
+      amplitude: 4.0, //Defaults to 2.0
     )
 
 
