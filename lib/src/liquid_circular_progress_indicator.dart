@@ -20,6 +20,12 @@ class LiquidCircularProgressIndicator extends ProgressIndicator {
   ///The direction the liquid travels.
   final Axis direction;
 
+  ///The number of waves that will be shown in one time frame
+  final double waveCount;
+
+  ///The amplitude of the waves
+  final double amplitude;
+
   LiquidCircularProgressIndicator({
     Key? key,
     double value = 0.5,
@@ -29,6 +35,8 @@ class LiquidCircularProgressIndicator extends ProgressIndicator {
     this.borderColor,
     this.center,
     this.direction = Axis.vertical,
+    this.waveCount = 1,
+    this.amplitude = 2,
   }) : super(
           key: key,
           value: value,
@@ -72,6 +80,8 @@ class _LiquidCircularProgressIndicatorState
               value: widget.value,
               color: widget._getValueColor(context),
               direction: widget.direction,
+              waveCount: widget.waveCount,
+              amplitude: widget.amplitude,
             ),
             if (widget.center != null) Center(child: widget.center),
           ],
@@ -113,8 +123,8 @@ class _CircleBorderPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeWidth = width!;
     final newSize = Size(size.width - width!, size.height - width!);
-    canvas.drawArc(
-        Offset(width! / 2, width! / 2) & newSize, 0, _sweep, false, borderPaint);
+    canvas.drawArc(Offset(width! / 2, width! / 2) & newSize, 0, _sweep, false,
+        borderPaint);
   }
 
   @override

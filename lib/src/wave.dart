@@ -6,12 +6,16 @@ class Wave extends StatefulWidget {
   final double? value;
   final Color color;
   final Axis direction;
+  final double waveCount;
+  final double amplitude;
 
   const Wave({
     Key? key,
     required this.value,
     required this.color,
     required this.direction,
+    required this.waveCount,
+    required this.amplitude,
   }) : super(key: key);
 
   @override
@@ -50,10 +54,11 @@ class _WaveState extends State<Wave> with SingleTickerProviderStateMixin {
           color: widget.color,
         ),
         clipper: _WaveClipper(
-          animationValue: _animationController.value,
-          value: widget.value,
-          direction: widget.direction,
-        ),
+            animationValue: _animationController.value,
+            value: widget.value,
+            direction: widget.direction,
+            waveCount: widget.waveCount,
+            amplitude: widget.amplitude),
       ),
     );
   }
@@ -63,11 +68,15 @@ class _WaveClipper extends CustomClipper<Path> {
   final double animationValue;
   final double? value;
   final Axis direction;
+  final double waveCount;
+  final double amplitude;
 
   _WaveClipper({
     required this.animationValue,
     required this.value,
     required this.direction,
+    required this.waveCount,
+    required this.amplitude,
   });
 
   @override
@@ -81,11 +90,27 @@ class _WaveClipper extends CustomClipper<Path> {
       return path;
     }
 
-    Path path = Path()
-      ..addPolygon(_generateVerticalWavePath(size), false)
-      ..lineTo(size.width, size.height)
-      ..lineTo(0.0, size.height)
-      ..close();
+    double p = value ?? 50 / 100.0;
+    double n = waveCount;
+    double amp = amplitude;
+    double baseHeight = (1 - p) * size.height;
+
+    Path path = Path();
+    path.moveTo(0.0, baseHeight);
+    for (double i = 0.0; i < size.width; i++) {
+      path.lineTo(
+          i,
+          baseHeight +
+              math.sin((i / size.width * 2 * math.pi * n) +
+                      (animationValue * 2 * math.pi) +
+                      math.pi * 1) *
+                  amp);
+    }
+
+    path.lineTo(size.width, size.height);
+    path.lineTo(0.0, size.height);
+    path.close();
+
     return path;
   }
 

@@ -11,6 +11,12 @@ class LiquidCustomProgressIndicator extends ProgressIndicator {
   ///The path used to draw the shape of the progress indicator. The size of the progress indicator is controlled by the bounds of this path.
   final Path shapePath;
 
+  ///The number of waves that will be shown in one time frame
+  final double waveCount;
+
+  ///The amplitude of the waves
+  final double amplitude;
+
   LiquidCustomProgressIndicator({
     Key? key,
     double value = 0.5,
@@ -19,6 +25,8 @@ class LiquidCustomProgressIndicator extends ProgressIndicator {
     this.center,
     required this.direction,
     required this.shapePath,
+    this.waveCount = 1,
+    this.amplitude = 2,
   }) : super(
           key: key,
           value: value,
@@ -62,6 +70,8 @@ class _LiquidCustomProgressIndicatorState
                   value: widget.value,
                   color: widget._getValueColor(context),
                   direction: widget.direction,
+                  waveCount: widget.waveCount,
+                  amplitude: widget.amplitude,
                 ),
               ),
               if (widget.center != null) Center(child: widget.center),

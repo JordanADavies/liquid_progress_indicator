@@ -11,7 +11,7 @@ class Example extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Liquid Progress Indicator Examples"),
+        title: Text("Liquid Progress Indicator - Subhopriyo"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(28.0),
