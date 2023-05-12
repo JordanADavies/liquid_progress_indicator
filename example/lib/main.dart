@@ -19,27 +19,36 @@ class Example extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            FlatButton(
+            TextButton(
               child: Text("Circular"),
-              color: Colors.grey[300],
+              style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.grey.shade300),
+              ),
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (_) => LiquidCircularProgressIndicatorPage(),
                 ),
               ),
             ),
-            FlatButton(
+            TextButton(
               child: Text("Linear"),
-              color: Colors.grey[300],
+              style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.grey.shade300),
+              ),
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (_) => LiquidLinearProgressIndicatorPage(),
                 ),
               ),
             ),
-            FlatButton(
+            TextButton(
               child: Text("Custom"),
-              color: Colors.grey[300],
+              style: ButtonStyle(
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.grey.shade300),
+              ),
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (_) => LiquidCustomProgressIndicatorPage(),

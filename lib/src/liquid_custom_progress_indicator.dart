@@ -27,10 +27,10 @@ class LiquidCustomProgressIndicator extends ProgressIndicator {
         );
 
   Color _getBackgroundColor(BuildContext context) =>
-      backgroundColor ?? Theme.of(context).backgroundColor;
+      backgroundColor ?? Theme.of(context).colorScheme.background;
 
   Color _getValueColor(BuildContext context) =>
-      valueColor?.value ?? Theme.of(context).accentColor;
+      valueColor?.value ?? Theme.of(context).colorScheme.secondary;
 
   @override
   State<StatefulWidget> createState() => _LiquidCustomProgressIndicatorState();
