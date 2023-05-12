@@ -23,7 +23,7 @@ class Example extends StatelessWidget {
               child: Text("Circular"),
               style: ButtonStyle(
                 backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.grey[300]!),
+                    MaterialStateProperty.all<Color>(Colors.grey.shade300),
               ),
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
@@ -35,7 +35,7 @@ class Example extends StatelessWidget {
               child: Text("Linear"),
               style: ButtonStyle(
                 backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.grey[300]!),
+                    MaterialStateProperty.all<Color>(Colors.grey.shade300),
               ),
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
@@ -47,7 +47,7 @@ class Example extends StatelessWidget {
               child: Text("Custom"),
               style: ButtonStyle(
                 backgroundColor:
-                    MaterialStateProperty.all<Color>(Colors.grey[300]!),
+                    MaterialStateProperty.all<Color>(Colors.grey.shade300),
               ),
               onPressed: () => Navigator.of(context).push(
                 MaterialPageRoute(
